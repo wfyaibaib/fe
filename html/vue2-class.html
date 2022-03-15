@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <style type="text/css">
+            .active {
+                background-color: red;
+            }
+            ul {
+                display: flex;
+            }
+            li {
+                flex:1;
+            }
+        </style>
+        <script src="js/vue2.js"></script>
+    </head>
+    <body>
+
+        <div id="box">
+            <ul>
+                <li v-for="(item, index) in datalist"
+                :class="index===current?'active':''"
+                @click="handleClick(index)">
+                    {{item}}--{{index}}
+                </li>
+            </ul>
+
+        </div>
+        <script>
+
+            let vm = new Vue({
+                el:"#box",
+                data:{
+                    datalist:["menu1", "menu2", "menu3"],
+                    current:0
+                },
+                methods: {
+                    handleClick(index){
+                        this.current = index;
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>

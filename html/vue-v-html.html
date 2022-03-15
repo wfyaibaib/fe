@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <style type="text/css">
+
+        </style>
+        <script src="js/vue2.js"></script>
+    </head>
+    <body>
+        <div id="box" v-html>
+            <p>
+                {{mytext}}
+            </p>
+            <p v-html="mytext">
+                {{mytext}}
+            </p>
+
+        </div>
+
+        <script>
+            new Vue({
+                el:"#box",
+                data:{
+                    mytext:"<b>bbbbb</b>"
+                }
+            });
+
+        </script>
+    </body>
+</html>

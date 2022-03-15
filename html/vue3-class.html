@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <style type="text/css">
+
+        </style>
+        <script src="js/vue.global.js"></script>
+    </head>
+    <body>
+
+        <div id="box">
+            {{1+3}}
+            {{mytext}}
+            {{myname}}
+            <input type="text" v-model="myname"/>
+            <button @click="handleClick()">click</button>
+            <div :class="classobj">
+                classobj
+            </div>
+        </div>
+        <script>
+            const obj = {
+                data(){
+                    return {
+                        mytext:"hello",
+                        myname:"myname",
+                        classobj:{
+                            aa:true,
+                            bb:true,
+                            cc:false
+                        }
+                    };
+                },
+                methods: {
+                    handleClick(){
+                        console.log("click");
+                        this.classobj.dd = true;
+                    }
+                },
+            }
+            const app = Vue.createApp(obj);
+            app.mount("#box");
+
+        </script>
+    </body>
+</html>

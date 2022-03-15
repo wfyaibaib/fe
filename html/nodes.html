@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <style type="text/css">
+
+        </style>
+    <script>
+        function msg() {console.log("clicked");}
+        function showEvent() {
+            console.log(this);
+            console.log(event);}
+    </script>
+    <script src="js/m.js"></script>
+    </head>
+    <body>
+        <p>p1</p>
+        <p>p2</p>
+        <p>p3</p>
+
+        <div>
+            <p>console log</p>
+            <input type="button" value="Click Me1"
+                onclick="console.log('clicked')")
+            />
+
+            <p>in file:msg()</p>
+            <input type="button" value="Click Me2"
+                onclick="msg()"/>
+
+            <p>out file:m()</p>
+            <input type="button" value="Click Me3"
+                onclick="m()"/>
+
+            <p>log this</p>
+            <input type="button" value="Click Me1"
+                onclick="console.log(this)")
+            />
+
+            <p>log event:call showEvent()</p>
+            <input type="button" value="Click Me4"
+                onclick="showEvent()"/>
+
+        </div>
+        <p>log username.value</p>
+        <form method="POST">
+            <input type="text" name="username" value="">
+            <input type="button" value="echo username"
+            onclick="console.log(username.value)">
+        </form>
+
+        <p>log this bubble phase</p>
+        <input id="button1" type="button" value="log this" />
+        <script>
+            let btn1 = document.getElementById("button1");
+            btn1.addEventListener("click",
+            ()=>{
+                console.log(this);
+            },
+            false);
+        </script>
+
+        <p>log this.id bubble phase</p>
+        <input id="button2" type="button" value="log this.id" />
+        <script>
+            let btn2 = document.getElementById("button2");
+            btn2.addEventListener("click",
+            ()=>{
+                console.log(this);
+                console.log(event);
+                console.log(this.id);
+            },
+            false);
+        </script>
+
+        <p>log this.id phase</p>
+        <input id="button3" type="button" value="log this.id" />
+        <script>
+            let btn3 = document.getElementById("button3");
+            btn3.addEventListener("click",
+            ()=>{
+                console.log(this);
+                console.log(event);
+                console.log(this.id);
+            },
+            true);
+        </script>
+    </body>
+</html>

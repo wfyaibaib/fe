@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <style type="text/css">
+
+        </style>
+        <script src="js/vue2.js"></script>
+    </head>
+    <body>
+
+        <div id="box">
+            <div :class="classobj">
+                some text1
+            </div>
+            <div :class="classarr">
+                some text2
+            </div>
+            <div :style="styleobj">
+                some text3
+            </div>
+            <div :style="stylearr">
+                some text4
+            </div>
+            <button @click="handleClick()">click</button>
+        </div>
+        <script>
+
+            let vm = new Vue({
+                el:"#box",
+                data:{
+                    classobj:{
+                        aa:true,
+                        bb:true,
+                        cc:false
+                    },
+                    classarr:["aa", "bb", "cc"],
+
+                    styleobj:{
+                        backgroundColor:"red"
+                    },
+                    stylearr:[
+                        {"backgroundColor":"blue"}
+                    ]
+
+                },
+                methods: {
+                    handleClick(){
+                        //Vue2 solution
+                        Vue.set(this.classobj, "dd", true);
+                        Vue.set(this.styleobj, "fontSize", "30px");
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>
+

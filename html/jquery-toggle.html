@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <style type="text/css">
+            .divDefault{
+                width:260px;
+                padding: 5px;
+                font-size: 10pt;
+            /*    display: block !important;*/
+            }
+            .divClick{
+                width:260px;
+                padding: 5px;
+                border:solid 1px #666;
+                font-size: 10pt;
+                background-color: #eee;
+            }
+
+        </style>
+        <script src="js/jquery-3.6.0.js"> </script>
+        <script>
+            $(function(){
+                $(".divDefault").click(
+                    function(){
+                        $(this).toggleClass("divClick").html("after click");
+                    }
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <div class="divDefault">before click</div>
+    </body>
+</html>

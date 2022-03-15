@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <style type="text/css">
+            .divFrame{
+                width:260px;
+                border:solid 1p #666;
+                font-size:10pt;
+            }
+            .divTitle{
+                background-color: #eee;
+                padding: 5px;
+            }
+            .divContent{
+                padding:5px;
+                display: none;
+            }
+            .divCurrColor{
+                background-color: red;
+            }
+        </style>
+        <script src="js/jquery-3.6.0.js">
+        </script>
+        <script>
+            $(function(){
+                $(".divTitle").click(
+                    function(){
+                        $(this).addClass("divCurrColor").next(".divContent").css("display", "block");
+                    }
+                )
+            });
+        </script>
+    </head>
+    <body>
+        <div class="divFrame">
+            <div class="divTitle">Title</div>
+            <div class="divContent">
+                <a href="#">link1</a>
+                <a href="#">link2</a>
+                <a href="#">link3</a>
+            </div>
+        </div>
+    </body>
+</html>
