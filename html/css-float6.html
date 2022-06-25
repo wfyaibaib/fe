@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin:0;
+        padding:0;
+    }    
+    .box {
+        width: 300px;
+        margin: 0 auto;
+    }
+    .box::after {
+        content: "";
+        clear:both;
+        display: block;
+    }
+    ul {
+        list-style: none;
+    }
+    .box .item {
+        float:left;
+        width: 150px;
+        text-align: center;
+        box-sizing: border-box;
+        border: 1px solid gray;
+        background: blue;
+        color: white;
+        line-height: 40px;
+
+        position: relative;
+    }
+    .box .item:hover {
+        background: lightblue;
+    }
+    .item ul {
+        display: none;
+        background: white;
+        color:black;
+
+        position: absolute;
+        width:150px;
+    }
+    .item:hover ul {
+        display: block;
+    }
+
+    .item li:hover {
+        color: blue;
+    }
+    .content {
+        background: yellow;
+    }
+
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li class="item">li1
+            <ul>
+                <li>li11</li>
+                <li>li12</li>
+                <li>li13</li>
+            </ul>
+        </li>
+        <li class="item">li2
+            <ul>
+                <li>li21</li>
+                <li>li22</li>
+                <li>li23</li>
+            </ul>
+        </li>
+    </ul>
+    <div class="content">11111111111</div>
+</body>
+</html>
