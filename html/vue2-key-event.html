@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <style type="text/css">
+
+        </style>
+        <script src="js/vue2.js"></script>
+    </head>
+    <body>
+        <div id="box">
+            <input type="text" @keyup="handleKeyup"/>
+            <input type="text" @keyup.enter="handleEnter"/>
+        </div>
+        <script>
+            var vm = new Vue({
+                el:"#box",
+                data:{
+                },
+                methods:{
+                    handleKeyup(event){
+                        console.log(event.keyCode)
+                        if (event.keyCode === 13) {
+                            console.log(event.target.value)
+                        }
+                    },
+                    handleEnter(event){
+                        console.log("enter")
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
+
+
+
+

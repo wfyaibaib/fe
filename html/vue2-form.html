@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <style type="text/css">
+
+        </style>
+        <script src="js/vue2.js"></script>
+    </head>
+    <body>
+        <div id="box">
+            <input type="checkbox"/ v-model="checkList" value="checkbox1">checkbox1
+            <input type="checkbox"/ v-model="checkList" value="checkbox2">checkbox2
+            <input type="checkbox"/ v-model="checkList" value="checkbox3">checkbox3
+            {{checkList}}
+            <br>
+            <input type="radio" v-model="select" value="radio1" />man
+            <input type="radio" v-model="select" value="radio2" />woman
+            {{select}}
+            <br>
+            <input type="text" v-model.lazy="mytext"/>
+            {{mytext}}
+            <br>
+
+            <input type="text" v-model.trim="mytrimstring"/>
+            {{mytrimstring}}
+
+            <input type="number" v-model="myage"/>
+            <input type="number" v-model.number="myage2"/>
+        </div>
+        <script>
+            var vm = new Vue({
+                el:"#box",
+                data:{
+                    checkList:[],
+                    select:"radio1",
+                    mytext:"",
+                    mytrimstring:"",
+                    myage:32,
+                    myage2:32
+                },
+                methods:{
+                }
+            })
+        </script>
+    </body>
+</html>
+
+
+
+
+

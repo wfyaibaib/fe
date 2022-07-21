@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <style type="text/css">
+
+        </style>
+        <script src="js/vue2.js"></script>
+    </head>
+    <body>
+        <div id="box">
+            {{count}}
+            <button @click="handleAdd">add 1</button>
+            <button @click="count++">add 1</button>
+            <button @click="handleAdd2()">add 2</button>
+            <button @click="handleAdd3($event,3)">add 3</button>
+            <input type="text" @input="handleInput"/>
+        </div>
+        <script>
+            var vm = new Vue({
+                el:"#box",
+                data:{
+                    count:0
+                },
+                methods:{
+                    handleAdd(event){
+                        console.log(event.target)
+                        this.count++
+                    },
+                    handleAdd2(event){
+                        console.log(event)
+                        this.count++
+                        this.count++
+                    },
+                    handleAdd3(event,num){
+                        console.log(event)
+                        this.count = this.count + num
+                    },
+                    handleInput(event){
+                        console.log("input", event.target.value)
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
+
+

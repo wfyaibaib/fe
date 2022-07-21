@@ -8,23 +8,20 @@
     </head>
     <body>
         <div id="box">
-            <p>
-                {{mytext}}
-            </p>
-            <p v-html="mytext">
-                {{mytext}}
-            </p>
-
+            <template v-if="isCreated">
+                <div>11111</div>
+                <div>2222</div>
+                <div>11111</div>
+            </template>
         </div>
 
         <script>
-            new Vue({
+            var vm = new Vue({
                 el:"#box",
                 data:{
-                    mytext:"<b>bbbbb</b>"
+                    isCreated:true
                 }
-            });
-
+            })
         </script>
     </body>
 </html>
